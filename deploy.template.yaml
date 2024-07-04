@@ -1,7 +1,7 @@
 services:
   - name: cancer-detection-app
     project: cancer-detection-app
-    image: python:3.8
+    image: python:3.12.4
     build_command: pip install -r requirements.txt
     run_command: gunicorn -b 0.0.0.0:5000 app:app
     http_port: 5000

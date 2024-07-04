@@ -1,7 +1,6 @@
 services:
   - name: cancer-detection-app
     project: cancer-detection-app
-    image: python:3.12.4
     build_command: pip install -r requirements.txt
     run_command: gunicorn -b 0.0.0.0:8080 app:app
     http_port: 8080
@@ -10,3 +9,5 @@ services:
     envs:
       - key: PORT
         value: "8080"
+    buildpacks:
+      - heroku/python
